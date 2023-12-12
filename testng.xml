@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <test verbose="2" parallel="methods" name="D:/Automation/WebAutomationInJava">
+        <classes>
+            <class name="org.example.AppTest">
+                <methods>
+                    <include name="OpenInChrome"/>
+                    <include name="OpenInEdge"/>
+                    <include name="OpenInFirefox"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

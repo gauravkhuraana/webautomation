@@ -1,0 +1,56 @@
+# Maven
+
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'test'
+
+
+- task: UseDotNet@2
+  displayName: "Installing dotnet version for using Syncher"
+  condition: always()
+  inputs:
+    packageType: "sdk"
+    version: "6.0.x"
+
+- task: CmdLine@2
+  displayName: "Running Syncer to update Results in Azure DevOps "
+  condition: always()
+  inputs:
+    script: |
+     dotnet tool install -g Syncer --version 1.0.2
+     echo "syncer update --account khuraanagaurav --file target/testresults.json --project Automation --token $(PATToken) --testsuiteids $(testsuiteids)"
+     syncer update --account khuraanagaurav --file target/testresults.json --project Automation --token $(PATToken) --testsuiteids $(testsuiteids)
+    
+
+- task: PublishPipelineArtifact@1
+  condition: always()
+  displayName: 'Getting the target folder as an artifact'
+  inputs:
+    targetPath: 'target'
+    artifact: 'TargetFolderDetails'
+    publishLocation: 'pipeline'
+
+- task: PublishHtmlReport@1
+  displayName: 'HTML Report'
+  condition: always()
+  inputs:
+    reportDir: 'target/surefire-reports/emailable-report.html'
+
