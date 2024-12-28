@@ -3,11 +3,14 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" parallel="methods" name="D:/Automation/WebAutomationInJava(failed)">
     <classes>
-      <class name="org.example.AppTest">
+      <class name="org.example.RestAPIForADOUpdate">
         <methods>
-          <include name="openInChrome"/>
+          <include name="OpenInFirefox"/>
+          <include name="OpenInChrome"/>
+          <include name="beforeSuite"/>
+          <include name="updateTestResults"/>
         </methods>
-      </class> <!-- org.example.AppTest -->
+      </class> <!-- org.example.RestAPIForADOUpdate -->
     </classes>
   </test> <!-- D:/Automation/WebAutomationInJava(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

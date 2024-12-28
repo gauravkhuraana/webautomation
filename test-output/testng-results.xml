@@ -1,24 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="4" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-23T15:19:39 IST" name="All Test Suite" finished-at="2023-10-23T15:20:03 IST" duration-ms="24776">
+  <suite started-at="2024-12-28T18:22:58 IST" name="All Test Suite" finished-at="2024-12-28T18:23:24 IST" duration-ms="26349">
     <groups>
+      <group name="TESTCASE_27">
+        <method signature="AppTest.OpenInFirefox()[pri:0, instance:org.example.AppTest@3c01cfa1]" name="OpenInFirefox" class="org.example.AppTest"/>
+        <method signature="RestAPIForADOUpdate.OpenInFirefox()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" name="OpenInFirefox" class="org.example.RestAPIForADOUpdate"/>
+      </group> <!-- TESTCASE_27 -->
+      <group name="TESTCASE_26">
+        <method signature="AppTest.OpenInEdge()[pri:0, instance:org.example.AppTest@3c01cfa1]" name="OpenInEdge" class="org.example.AppTest"/>
+        <method signature="RestAPIForADOUpdate.OpenInEdge()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" name="OpenInEdge" class="org.example.RestAPIForADOUpdate"/>
+      </group> <!-- TESTCASE_26 -->
+      <group name="TESTCASE_22">
+        <method signature="AppTest.OpenInChrome()[pri:0, instance:org.example.AppTest@3c01cfa1]" name="OpenInChrome" class="org.example.AppTest"/>
+        <method signature="RestAPIForADOUpdate.OpenInChrome()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" name="OpenInChrome" class="org.example.RestAPIForADOUpdate"/>
+      </group> <!-- TESTCASE_22 -->
     </groups>
-    <test started-at="2023-10-23T15:19:39 IST" name="D:/Automation/WebAutomationInJava" finished-at="2023-10-23T15:20:03 IST" duration-ms="24776">
-      <class name="org.example.AppTest">
-        <test-method signature="OpenInChrome()[pri:0, instance:org.example.AppTest@21507a04]" started-at="2023-10-23T15:19:39 IST" name="OpenInChrome" finished-at="2023-10-23T15:20:03 IST" duration-ms="24502" status="PASS">
+    <test started-at="2024-12-28T18:22:58 IST" name="D:/Automation/WebAutomationInJava" finished-at="2024-12-28T18:23:24 IST" duration-ms="26349">
+      <class name="org.example.RestAPIForADOUpdate">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:22:58 IST" name="beforeSuite" finished-at="2024-12-28T18:22:58 IST" duration-ms="69" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OpenInChrome -->
-        <test-method signature="OpenInEdge()[pri:0, instance:org.example.AppTest@21507a04]" started-at="2023-10-23T15:19:39 IST" name="OpenInEdge" finished-at="2023-10-23T15:20:03 IST" duration-ms="24692" status="PASS">
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="OpenInEdge()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:22:58 IST" name="OpenInEdge" finished-at="2024-12-28T18:22:58 IST" duration-ms="140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenInEdge -->
-        <test-method signature="OpenInFirefox()[pri:0, instance:org.example.AppTest@21507a04]" started-at="2023-10-23T15:19:39 IST" name="OpenInFirefox" finished-at="2023-10-23T15:20:03 IST" duration-ms="24377" status="PASS">
+        <test-method signature="OpenInChrome()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:22:58 IST" name="OpenInChrome" finished-at="2024-12-28T18:23:18 IST" duration-ms="20050" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.nio.file.NoSuchFileException: failed.png]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.nio.file.NoSuchFileException: failed.png
+at org.example.RestAPIForADOUpdate.OpenInChrome(RestAPIForADOUpdate.java:78)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.nio.file.NoSuchFileException: failed.png
+at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+at java.base/java.nio.file.Files.newInputStream(Files.java:156)
+at org.example.RestAPIForADOUpdate.OpenInChrome(RestAPIForADOUpdate.java:74)
+... 18 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenInChrome -->
+        <test-method is-config="true" signature="updateTestResults(org.testng.ITestResult)[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:22:58 IST" name="updateTestResults" finished-at="2024-12-28T18:23:03 IST" duration-ms="4322" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OpenInEdge status=SUCCESS method=RestAPIForADOUpdate.OpenInEdge()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.restassured.path.json.exception.JsonPathException">
+            <message>
+              <![CDATA[Failed to parse the JSON document]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
+at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+at io.restassured.path.json.JsonPath.getInt(JsonPath.java:237)
+at org.example.RestAPIForADOUpdate.updateTestResults(RestAPIForADOUpdate.java:175)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:802)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:778)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: groovy.json.JsonException: Lexing failed on line: 2, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
+at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
+at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.restassured.path.json.exception.JsonPathException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTestResults -->
+        <test-method signature="OpenInFirefox()[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:23:03 IST" name="OpenInFirefox" finished-at="2024-12-28T18:23:03 IST" duration-ms="0" status="SKIP">
+          <exception class="io.restassured.path.json.exception.JsonPathException">
+            <message>
+              <![CDATA[Failed to parse the JSON document]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
+at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
+at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
+at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
+at io.restassured.path.json.JsonPath.getInt(JsonPath.java:237)
+at org.example.RestAPIForADOUpdate.updateTestResults(RestAPIForADOUpdate.java:175)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:802)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:778)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: groovy.json.JsonException: Lexing failed on line: 2, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
+at groovy.json.JsonLexer$nextToken.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse.callCurrent(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
+at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.restassured.path.json.exception.JsonPathException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenInFirefox -->
+        <test-method is-config="true" signature="updateTestResults(org.testng.ITestResult)[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:23:03 IST" name="updateTestResults" finished-at="2024-12-28T18:23:03 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTestResults -->
+        <test-method is-config="true" signature="updateTestResults(org.testng.ITestResult)[pri:0, instance:org.example.RestAPIForADOUpdate@5c45d770]" started-at="2024-12-28T18:23:18 IST" name="updateTestResults" finished-at="2024-12-28T18:23:18 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTestResults -->
+      </class> <!-- org.example.RestAPIForADOUpdate -->
+      <class name="org.example.AppTest">
+        <test-method signature="OpenInFirefox()[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:22:58 IST" name="OpenInFirefox" finished-at="2024-12-28T18:23:24 IST" duration-ms="26191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenInFirefox -->
+        <test-method signature="OpenInChrome()[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:22:58 IST" name="OpenInChrome" finished-at="2024-12-28T18:23:18 IST" duration-ms="20300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenInChrome -->
+        <test-method signature="OpenInEdge()[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:22:58 IST" name="OpenInEdge" finished-at="2024-12-28T18:23:20 IST" duration-ms="21718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenInEdge -->
+        <test-method is-config="true" signature="CreateResultsJson(org.testng.ITestResult)[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:23:18 IST" name="CreateResultsJson" finished-at="2024-12-28T18:23:18 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OpenInChrome status=SUCCESS method=AppTest.OpenInChrome()[pri:0, instance:org.example.AppTest@3c01cfa1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateResultsJson -->
+        <test-method is-config="true" signature="CreateResultsJson(org.testng.ITestResult)[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:23:20 IST" name="CreateResultsJson" finished-at="2024-12-28T18:23:20 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OpenInEdge status=SUCCESS method=AppTest.OpenInEdge()[pri:0, instance:org.example.AppTest@3c01cfa1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateResultsJson -->
+        <test-method is-config="true" signature="CreateResultsJson(org.testng.ITestResult)[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:23:24 IST" name="CreateResultsJson" finished-at="2024-12-28T18:23:24 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OpenInFirefox status=SUCCESS method=AppTest.OpenInFirefox()[pri:0, instance:org.example.AppTest@3c01cfa1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateResultsJson -->
+        <test-method is-config="true" signature="CreateFile()[pri:0, instance:org.example.AppTest@3c01cfa1]" started-at="2024-12-28T18:23:24 IST" name="CreateFile" finished-at="2024-12-28T18:23:24 IST" duration-ms="53" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateFile -->
       </class> <!-- org.example.AppTest -->
     </test> <!-- D:/Automation/WebAutomationInJava -->
   </suite> <!-- All Test Suite -->

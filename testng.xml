@@ -9,6 +9,7 @@
                     <include name="OpenInFirefox"/>
                 </methods>
             </class>
+            <class name="org.example.RestAPIForADOUpdate"></class>
         </classes>
     </test>
 </suite>
