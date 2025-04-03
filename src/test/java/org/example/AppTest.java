@@ -5,25 +5,31 @@ import ADO.Root;
 import ADO.SingleInstance;
 import ADO.TestCase;
 import com.google.gson.Gson;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+import org.example.base.TestBase; // Adjust the package name as needed
+
+public class AppTest extends TestBase
 {
     /**
      * Rigorous Test :-)
@@ -32,13 +38,14 @@ public class AppTest
     @Test (groups = "TESTCASE_22")
     public void OpenInChrome()
     {
-        WebDriver driver;
-        System.out.println("starting chrome browser...");
-        driver = new ChromeDriver();
-        driver.get("https://udzial.com");
-        driver.quit();
-        System.out.println("chrome browser closed ...");
-
+        try {
+            System.out.println("Starting Chrome browser...");
+            initializeDriver(new ChromeDriver());
+            driver.get("https://udzial.com");
+        } finally {
+            tearDown();
+            System.out.println("Chrome browser closed...");
+        }
     }
     @Test (groups = "TESTCASE_26")
     public void OpenInEdge()
@@ -62,6 +69,147 @@ public class AppTest
 
     }
 
+// Compare two lists and print the differences
+public void printListDifferences(List<String> list1, List<String> list2)
+{
+    List<String> list1Copy = new ArrayList<>(list1);
+    List<String> list2Copy = new ArrayList<>(list2);
+    list1Copy.removeAll(list2);
+    list2Copy.removeAll(list1);
+    System.out.println("The difference between the two lists is: ");
+    System.out.println("List1 - List2: " + list1Copy);
+    System.out.println("List2 - List1: " + list2Copy);
+}
+
+public void functiontodetectevenoddnumber(int number)
+{
+    evenoddnumber(number);
+    if(number % 2 == 0)
+    {
+        System.out.println("The number is even.");
+    }
+    else
+    {
+        System.out.println("The number is odd.");
+    }
+}
+
+public void evenoddnumber(int number)
+{
+    if(number % 2 == 0)
+    {
+        System.out.println("The number is even.");
+    }
+    else
+    {
+        System.out.println("The number is odd.");
+    }
+}
+
+public void identifyarmstrongnumer (int number)
+{
+    int c=0,a,temp;  
+    int n=number;//It is the number to check armstrong  
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println(temp+" is armstrong number");   
+    else  
+        System.out.println(temp+" is Not armstrong number");   
+   }  
+
+   public void functiontodetectpalindromenumber(int number)
+   {
+    int r,sum=0,temp;    
+    int n=number;//It is the number variable to be checked for palindrome  
+    
+    temp=n;    
+    while(n>0)    
+    {    
+     r=n%10;  //getting remainder  
+     sum=(sum*10)+r;    
+     n=n/10;    
+    }    
+    if(temp==sum)    
+     System.out.println(temp+" is a palindrome number ");    
+    else    
+     System.out.println(temp+" is not a palindrome");   
+   }  
+
+   public void functiontodetectpalindromestring(String str)
+   {
+    String reverse = ""; // Objects of String class  
+    int length = str.length();   
+    for ( int i = length - 1; i >= 0; i-- )  
+       reverse = reverse + str.charAt(i);  
+    if (str.equals(reverse))  
+       System.out.println(str+" is a palindrome.");  
+    else  
+       System.out.println(str+" is not a palindrome.");   
+   }  
+
+   public void functiontodetectfibonacciseries(int n)
+   {
+    int n1=0,n2=1,n3,i,count=n;    
+    System.out.print(n1+" "+n2);//printing 0 and 1    
+    
+    for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed    
+    {    
+     n3=n1+n2;    
+     System.out.print(" "+n3);    
+     n1=n2;    
+     n2=n3;    
+    }    
+   }  
+
+   public void functiontodetectfactorial(int n)
+   {
+    int i,fact=1;  
+    int number=n;//It is the number to calculate factorial    
+    for(i=1;i<=number;i++){    
+        fact=fact*i;
+    }
+}
+    
+
+ public void compare2strings(String str1, String str2)
+ {
+    System.out.println("AppTest.compare2strings()");
+    if(str1.equals(str2))
+    {
+        System.out.println("The two strings are equal");
+    }
+    else
+    {
+        System.out.println("The two strings are not equal");
+    }
+}
+
+
+  public void functiontodetectprimenumber(int number)
+  {
+      int flag = 0;
+      for(int i = 2; i <= number/2; ++i)
+      {
+          // condition for nonprime number
+          if(number % i == 0)
+          {
+              flag = 1;
+              break;
+          }
+      }
+
+      if (flag == 0)
+          System.out.println(number + " is a prime number.");
+      else
+          System.out.println(number + " is not a prime number.");
+    }
+    
     @AfterMethod
     public void CreateResultsJson(ITestResult result)
     {
