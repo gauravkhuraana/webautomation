@@ -30,3 +30,4 @@ target
 .vscode
 .vscode/*
 allure-results
+test-output
