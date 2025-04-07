@@ -1,5 +1,4 @@
-# Copilot InstructionsPipeline
-ults in ADO using Syncer utility
+
 ## Project Overview
 This is a Java-based web automation testing framework (not C# as initially stated) that uses:
 - Selenium WebDriver for browser automation
@@ -68,9 +67,3 @@ public void testMethod() {
 }
 ```
 
-## Tips for Copilot
-- Suggest explicit waits over implicit waits
-- Include WebDriver cleanup in finally blocks
-- Generate proper test documentation
-- Follow page object model pattern
-- Implement proper exception handling
