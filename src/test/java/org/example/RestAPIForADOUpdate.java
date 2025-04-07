@@ -65,40 +65,44 @@ public class RestAPIForADOUpdate {
 
         WebDriver driver;
         System.out.println("starting chrome browser...");
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver"); // Replace with the actual path to chromedriver
         driver = new ChromeDriver();
         driver.get("https://udzial.com");
         driver.quit();
         System.out.println("chrome browser closed ...");
 
         Allure.attachment("data.txt", "This is the file content.");
-        try (InputStream is = Files.newInputStream(Paths.get("failed.png"))) {
-            Allure.attachment("image.png", is);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (Files.exists(Paths.get("failed.png"))) {
+            try (InputStream is = Files.newInputStream(Paths.get("failed.png"))) {
+                Allure.attachment("image.png", is);
+            } catch (IOException e) {
+                throw new RuntimeException("Error while attaching the image", e);
+            }
+        } else {
+            System.out.println("File 'failed.png' does not exist. Skipping attachment.");
         }
 
-    }
-
-    @Test(groups = "TESTCASE_26")
-    public void OpenInEdge() {
-//        WebDriver driver;
-//        driver = new EdgeDriver();
-//        System.out.println("starting edge browser...");
-//        driver.get("https://udzial.com");
-//        driver.quit();
+        // Removed unmatched catch block
 
     }
 
-    @Test(groups = "TESTCASE_27")
-    public void OpenInFirefox() {
-        WebDriver driver;
-        driver = new FirefoxDriver();
-        System.out.println("starting firefox browser...");
-        driver.get("https://udzial.com");
-        driver.quit();
+@Test(groups = "TESTCASE_26")
+public void OpenInEdge() {
+    WebDriver driver;
+     driver = new EdgeDriver();
+    driver.get("https://udzial.com");
+    driver.quit();
+    System.out.println("edge browser closed...");
+}
 
-    }
+@Test(groups = "TESTCASE_27")
+public void OpenInFirefox() {
+    WebDriver driver;
+    driver = new FirefoxDriver();
+    driver.get("https://udzial.com");
+    driver.quit();
+    System.out.println("firefox browser closed...");
+}
 
     public int getTestCaseId(String[] groups) {
 
